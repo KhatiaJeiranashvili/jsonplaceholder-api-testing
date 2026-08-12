@@ -2,7 +2,7 @@
 
 ## Overview
 
-The project is API automation framework built with Python, pytest.
+The project is API automation framework built with Python, pytest. The project can be executed locally or inside a Docker container to provide a consistent test environment.
 
 ## Technologies
 
@@ -11,7 +11,6 @@ The project is API automation framework built with Python, pytest.
 - Requests
 - REST API
 - JSON
-- GitHub Actions
 - Docker
 
 ## Project Structure
@@ -25,6 +24,10 @@ api/
 tests/
     test_posts.py
     test_users.py 
+
+conftest.py
+Dockerfile
+requirements.txt
 
 ## Features
 
@@ -42,7 +45,9 @@ tests/
 Clone repository:
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/KhatiaJeiranashvili/jsonplaceholder-api-testing.git
+cd jsonplaceholder-api-testing
+```
 
 
 ## Run Tests 
@@ -53,5 +58,14 @@ pytest -v
 
 ### With Docker
 
+Build the Docker image:
+
+```bash
 docker build -t jsonplaceholder-api-tests .
+```
+
+Run the tests:
+
+```bash
 docker run --rm jsonplaceholder-api-tests
+```
